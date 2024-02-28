@@ -8,3 +8,6 @@ class ListCars(models.Model):
     price = models.PositiveSmallIntegerField(default=1)
     year = models.PositiveSmallIntegerField(default=2000)
     image = models.ImageField(upload_to='mediacar', blank=True, null=True)
+
+    def __str__(self):
+        return self.carName
