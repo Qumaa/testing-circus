@@ -20,7 +20,11 @@ from django.urls import path
 def trigger_error(request):
     division_by_zero = 1 / 0
 
+def raise_custom_error(request):
+    raise Exception('spam', 'error')
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('sentry-debug/', trigger_error),
+    path('custom-error/', raise_custom_error),
 ]
